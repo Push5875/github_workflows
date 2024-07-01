@@ -41,6 +41,7 @@ jobs:
             port: ${{ secrets.VPS_SSH_PORT }}
             script: |
                 cd ${{ secrets.PROJECT_PATH }}
+                ls
                 git pull origin development
                 make down
                 make build
