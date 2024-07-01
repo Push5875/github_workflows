@@ -40,7 +40,7 @@ jobs:
             script: |
                 echo "Connection to EC2 is successful"
                 mkdir -p /home/ubuntu/test
-                cd ${{ secrets.PROJECT_PATH }}
+                cd /home/ubuntu/test
                 git pull origin development
                 sudo apt install make
                 make down
