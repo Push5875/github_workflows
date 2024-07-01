@@ -40,9 +40,9 @@ jobs:
             script: |
                 echo "Connection to EC2 is successful"
                 mkdir -p /home/ubuntu/test
-                echo ${{ secrets.PROJECT_PATH }}
                 cd ${{ secrets.PROJECT_PATH }}
                 git pull origin development
+                sudo apt install make
                 make down
                 make build
                 echo "Deleting old image(s)..."
