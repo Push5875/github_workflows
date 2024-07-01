@@ -39,10 +39,10 @@ jobs:
             port: ${{ secrets.VPS_SSH_PORT }}
             script: |
                 echo "Connection to EC2 is successful"
-                mkdir -p /home/ubuntu/test
                 cd /home/ubuntu/project
                 git init
-                git pull origin development
+                git clone https://github.com/Push5875/github_workflows.git
+                cd /home/ubuntu/project/github_workflows
                 sudo apt install make
                 make down
                 make build
