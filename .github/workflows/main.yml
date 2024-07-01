@@ -40,7 +40,7 @@ jobs:
             script: |
                 echo "Connection to EC2 is successful"
                 mkdir -p /home/ubuntu/test
-                cd /home/ubuntu/test
+                cd /home/ubuntu/project
                 git init
                 git pull origin development
                 sudo apt install make
