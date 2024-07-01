@@ -43,6 +43,7 @@ jobs:
                 git init
                 git clone https://github.com/Push5875/github_workflows.git
                 cd /home/ubuntu/project/github_workflows
+                git checkout development
                 sudo apt install make
                 make down
                 make build
