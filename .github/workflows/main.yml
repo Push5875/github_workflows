@@ -40,7 +40,9 @@ jobs:
             # SSH port
             port: ${{ secrets.VPS_SSH_PORT }}
             script: |
+                echo "Connection to EC2 is successful"
                 cd ${{ secrets.PROJECT_PATH }}
+                git pull origin development
                 make down
                 make build
                 echo "Deleting old image(s)..."
