@@ -30,17 +30,16 @@ jobs:
         uses: appleboy/ssh-action@master
         with: 
             # EC2 Ip address
-            host: ${{ secrets.VPS_SSH_HOST }}
-                  
+            host: ${{ secrets.VPS_SSH_HOST }}       
             # VPS username
             username: ${{ secrets.VPS_SSH_USERNAME }}
-            
             # SSH key (copy it from your local machine)
             key: ${{ secrets.VPS_SSH_SECRET }}
             # SSH port
             port: ${{ secrets.VPS_SSH_PORT }}
             script: |
                 echo "Connection to EC2 is successful"
+                mkdir -p /home/ubuntu/test
                 cd ${{ secrets.PROJECT_PATH }}
                 git pull origin development
                 make down
