@@ -41,6 +41,7 @@ jobs:
                 echo "Connection to EC2 is successful"
                 mkdir -p /home/ubuntu/test
                 cd /home/ubuntu/test
+                git init
                 git pull origin development
                 sudo apt install make
                 make down
